@@ -29,7 +29,7 @@ function getUserInfo() {
         // },
         success: (res) => {
 
-            console.log(res);
+            // console.log(res);
             if (res.status !== 0) {
                 return layui.layur.msg(res.message)
             }

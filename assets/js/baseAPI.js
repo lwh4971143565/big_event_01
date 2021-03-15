@@ -17,7 +17,7 @@ $.ajaxPrefilter(function (options) {
 
         //登录拦截
         options.complete = function (res) {
-            console.log(res.responseJSON);
+            // console.log(res.responseJSON);
             let obj = res.responseJSON;
             if (obj.satatus == 1 && obj.message == "身份认证失败！") {
 
