@@ -3,6 +3,18 @@ $(function () {
 
 
     getUserInfo()
+
+
+    //退出功能
+let  layer =layui.layer
+$('#btnLogout').on('click',function(){
+    layer.confirm('是否确认退出?',{icon:3,title:'提示'},function(index){
+        localStorage.removeItem('token');
+        location.href="/login.html";
+        layer.close(index);
+    })
+})
+
 })
 
 
@@ -12,9 +24,9 @@ function getUserInfo() {
     $.ajax({
 
         url: '/my/userinfo',
-        headers: {
-            Authorization: localStorage.getItem('token') || ""
-        },
+        // headers: {
+        //     Authorization: localStorage.getItem('token') || ""
+        // },
         success: (res) => {
 
             console.log(res);
@@ -25,6 +37,7 @@ function getUserInfo() {
         }
     })
 }
+
 
 function renderAvatar(user) {
     let name = user.nickname || user.username
