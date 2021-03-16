@@ -71,7 +71,7 @@
         </tbody>
       </table>
       <div id="pageBox"></div>
- 
+
     </div>
   </div>
 
@@ -86,7 +86,7 @@
       {{$value.title}}
     </td>
     <td> {{$value.cate_name}}</td>
-    <td> {{$value.pub_date }}</td>
+    <td> {{$value.pub_date|dateFormat }}</td>
     <td> {{($value.state)}}</td>
     <td>
       <button data-id="{{ $value.Id}}" class="btn-edit layui-btn layui-btn-xs">编辑</button>

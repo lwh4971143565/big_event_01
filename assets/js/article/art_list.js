@@ -1,19 +1,19 @@
 $(function () {
     //时间优化
-    template.defaults.imports.dateFormat = function (dtStr) {
-        let dt = new Date(dtStr)
+    template.defaults.imports.dateFormat = function (dateStr) {
+        let dt = new Date(dateStr);
         let y = dt.getFullYear();
-        let m = padZero(dt.geiMonth() + 1)
-        let d = padZero(dt.getDate())
+        let m = padZero(dt.getMonth() + 1);
+        let d = padZero(dt.getDate());
 
+        let hh = padZero(dt.getHours());
+        let mm = padZero(dt.getMinutes());
+        let ss = padZero(dt.getSeconds());
 
-        let hh = padZero(dt.getHours())
-        let mm = padZero(dt.getMinutes())
-        let ss = padZero(dt.getSeconds())
-        return y + "-" + m + "-" + d + "-" + hh + ":" + mm + ":" + ss
+        return `${y}-${m}-${d} ${hh}:${mm}:${ss}`;
     }
-    function padZero(n) {
-        return n < 10 ? '0' + n : n
+    function padZero(num) {
+        return num < 10 ? "0" + num : num
     }
 
     // 封装函数
